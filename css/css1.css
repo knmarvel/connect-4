@@ -8,7 +8,7 @@
     --color5: #f26419;
 }
 
-#playarea   {
+.playArea   {
 
     display: flex;
     flex-direction: row;
