@@ -1,0 +1,42 @@
+:root{
+    --blockwidth: 5em;
+    --blockheight: 5em;
+    --color1: #33658A;
+    --color2: #86BBD8;
+    --color3: #2f4858;
+    --color4: #f6AE2D;
+    --color5: #f26419;
+}
+
+#playarea   {
+
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    border: 2px solid var(--color3);
+    height: 5em;
+    width: 5em;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color2);
+
+
+}
+
+#bottomofboard  {
+    background-color: var(--color3);
+    color: var(--color5);
+    height:2em;
+    width: 40em;
+    padding: 0;
+    
+
+}
