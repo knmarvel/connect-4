@@ -8,10 +8,11 @@ const columns = [
     ["N", "N", "N", "N", "N", "N"] //col 6
 ]
 
+console.log(columns[1][1])
 
 function labelBlocks(x, y) {
-    let N = columns[y].join().toString().substring(x, 1)
-    console.log(N)
+    let N = columns[y][x]
+    return N
 }
 labelBlocks(0, 0)
 
@@ -24,11 +25,14 @@ function columnLoop() {
     for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
         for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
             //select the div coordinates
+            let content = (labelBlocks(rowCounter, columnCounter))
+            console.log(content)
             let blockId = (rowCounter + "," + columnCounter)
             console.log(blockId)
             let divToReplace = document.getElementById(blockId);
+            console.log(divToReplace)
             //find the block label
-            blockId.innerHTML(labelBlocks(rowCounter, columnCounter));
+            divToReplace.innerHTML += " " + labelBlocks(rowCounter, columnCounter);
         }
     }
 }
@@ -36,12 +40,7 @@ function columnLoop() {
 columnLoop();
 
 
-// function addDivContent(content) {
-//     let Ntest = document.querySelector("#0,0")
 
-//     labelBlocks().innerHTML = content;
-// }
-// addDivContent()
 
 
 //Make a click handler for each column "target or current target" CHECK
