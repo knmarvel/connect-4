@@ -19,7 +19,7 @@ labelBlocks(0, 0)
 
 //Loop through columns and label according to the array.
 
-//loop through columns and rows
+//loop through columns and rows and replaces div content from columns array. 
 function columnLoop() {
 
     for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
