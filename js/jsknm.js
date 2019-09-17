@@ -8,7 +8,6 @@ const columns = [
     ["N", "N", "N", "N", "N", "N"] //col 6
 ]
 
-console.log(columns[1][1])
 
 function labelBlocks(x, y) {
     let N = columns[y][x]
@@ -26,13 +25,10 @@ function columnLoop() {
         for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
             //select the div coordinates
             let content = (labelBlocks(rowCounter, columnCounter))
-            console.log(content)
             let blockId = (rowCounter + "," + columnCounter)
-            console.log(blockId)
             let divToReplace = document.getElementById(blockId);
-            console.log(divToReplace)
             //find the block label
-            divToReplace.innerHTML += " " + labelBlocks(rowCounter, columnCounter);
+            divToReplace.innerHTML += " " + content;
         }
     }
 }
