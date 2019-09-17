@@ -28,12 +28,6 @@ function columnIsFullError() {
 
 function displayBoardInHTML(boardToDisplay) {
 
-
-    // nothing to return
-}
-
-function boardLoop() {
-
     for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
         for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
             //select the div coordinates
@@ -45,7 +39,12 @@ function boardLoop() {
         }
     }
 }
-boardLoop();
+displayBoardInHTML(board);
+
+    // nothing to return
+
+
+
 
 function checkForEndingCondition(boardToCheck) {
     // ending conditions: "red win", "black win", "tie", "" (keep playing)
@@ -66,18 +65,10 @@ function togglePlayer(color) {
     return newColor
 }
 
-function switchPlayer() {
-    if (player === "R") {
-        player = "B";
-    } else {
-        player = "R";
-    }
-}
+
 
 function columnClickHandler(evt) {
     // figure out what column was clicked
-
-
     let col0Click = document.querySelector("#col0")
     col0Click.addEventListener('click', function changeColumn0Value(player) {
             if (rowcount0 < 6) {
@@ -85,88 +76,64 @@ function columnClickHandler(evt) {
                 rowCount0 = rowCount0 + 1
             } else {
                 columnIsFullError()
-            }
-        }
-
+            }})
+    
         let col1Click = document.querySelector("#col1")
-        col1Click.addEventListener('click', function selectColumn() {
-            console.log(col1Click)
-        })
-
-        function changeColumn1Value(player) {
+        col1Click.addEventListener('click', function changeColumn1Value(player) {
             if (rowcount1 < 6) {
                 board[row][1] = player;
                 rowCount1 = rowCount1 + 1
             } else {
                 columnIsFullError()
-            }
         }
+    })
+        
         let col2Click = document.querySelector("#col2")
-        col2Click.addEventListener('click', function selectColumn() {
-            console.log(col2Click)
-        })
-
-        function changeColumn2Value(player) {
+        col2Click.addEventListener('click',function changeColumn2Value(player) {
             if (rowcount2 < 6) {
                 board[row][2] = player;
                 rowCount2 = rowCount2 + 1
             } else {
                 columnIsFullError()
-            }
-        }
+            } })
         let col3Click = document.querySelector("#col3")
-        col3Click.addEventListener('click', function selectColumn() {
-            console.log(col3Click)
-        })
-
-        function changeColumn3Value(player) {
+        col3Click.addEventListener('click', function changeColumn3Value(player) {
             if (rowcount3 < 6) {
                 board[row][3] = player;
                 rowCount3 = rowCount3 + 1
             } else {
                 columnIsFullError()
-            }
-        }
-        let col4Click = document.querySelector("#col4")
-        col4Click.addEventListener('click', function selectColumn() {
-            console.log(col4Click)
-        })
+            }})
 
-        function changeColumn4Value(player) {
+        let col4Click = document.querySelector("#col4")
+        col4Click.addEventListener('click', function changeColumn4Value(player) {
             if (rowcount4 < 6) {
                 board[row][4] = player;
                 rowCount4 = rowCount4 + 1
             } else {
                 columnIsFullError()
             }
-        }
-        let col5Click = document.querySelector("#col5")
-        col5Click.addEventListener('click', function selectColumn() {
-            console.log(col5Click)
         })
-
-        function changeColumn5Value(player) {
+        let col5Click = document.querySelector("#col5")
+        col5Click.addEventListener('click', function changeColumn5Value(player) {
             if (rowcount5 < 6) {
                 board[row][5] = player;
                 rowCount5 = rowCount5 + 1
             } else {
                 columnIsFullError()
-            }
-        }
+            } 
+        })
         let col6Click = document.querySelector("#col6")
-        col6Click.addEventListener('click', function selectColumn() {
-            console.log(col6Click)
-        }) if (clickedColumn === undefined) {
-            return
-        }
-
-        function changeColumn6Value(player) {
+        col6Click.addEventListener('click', function changeColumn6Value(player) {
             if (rowcount6 < 6) {
                 board[row][5] = player;
                 rowCount5 = rowCount5 + 1
             } else {
                 columnIsFullError()
             }
+        })
+        if (clickedColumn === undefined) {
+            return
         }
 
         board = addDiskToBoard(currentPlayer, board, clickedColumn) displayBoardInHTML(board) let condition = checkForEndingCondition(board)
