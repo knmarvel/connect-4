@@ -8,6 +8,13 @@ const columns = [
     ["N", "N", "N", "N", "N", "N"] //col 6
 ]
 
+let player = "R"
+let rowCount0 = 0;
+let rowCount1 = 0;
+let rowCount2 = 0;
+let rowCount3 = 0;
+let rowCount4 = 0;
+let rowCount5 = 0;
 
 function labelBlocks(x, y) {
     let N = columns[y][x]
@@ -35,9 +42,74 @@ function columnLoop() {
 
 columnLoop();
 
+//switches players
+function switchPlayer() {
+    if (player === "R") {
+        player = "B";
+} else {
+    player = "R";
+}
+}
 
+//changes the appropriate column value
+function changeColumn0Value(player) {
+    if(rowcount0 < 6) {
+        columns [0][row] = player;
+        rowCount0 = rowCount0 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
+function changeColumn1Value(player) {
+    if(rowcount1 < 6) {
+        columns [0][row] = player;
+        rowCount1 = rowCount1 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
+function changeColumn2Value(player) {
+    if(rowcount2 < 6) {
+        columns [0][row] = player;
+        rowCount2 = rowCount2 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
+function changeColumn3Value(player) {
+    if(rowcount3 < 6) {
+        columns [0][row] = player;
+        rowCount3 = rowCount3 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
+function changeColumn4Value(player) {
+    if(rowcount4 < 6) {
+        columns [0][row] = player;
+        rowCount4 = rowCount4 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
+function changeColumn5Value(player) {
+    if(rowcount5 < 6) {
+        columns [0][row] = player;
+        rowCount5 = rowCount5 + 1
+    }
+    else{
+        columnIsFullError()
+    }
+}
 
-
+function columnIsFullError()  {
+    alert("Invalid move: column is full.")
+}
 
 //Make a click handler for each column "target or current target" CHECK
 //don't add more when column is full
