@@ -1,13 +1,3 @@
-const columns = [
-    ["N", "N", "N", "N", "N", "N"], //col 0: on click, the last null in the string changes to the appropriate color
-    ["N", "N", "N", "N", "N", "N"], //col 1
-    ["N", "N", "N", "N", "N", "N"], // col 2
-    ["N", "N", "N", "N", "N", "N"], //col 3
-    ["N", "N", "N", "N", "N", "N"], //col 4
-    ["N", "N", "N", "N", "N", "N"], //col 5
-    ["N", "N", "N", "N", "N", "N"] //col 6
-]
-
 let player = "R"
 let rowCount0 = 0;
 let rowCount1 = 0;
@@ -16,8 +6,19 @@ let rowCount3 = 0;
 let rowCount4 = 0;
 let rowCount5 = 0;
 
+const board = [
+    [null, null, null, null, null, null, null], //row 0: on click, the last null in the string changes to the appropriate rowor
+    [null, null, null, null, null, null, null], //row 1
+    [null, null, null, null, null, null, null], // row 2
+    [null, null, null, null, null, null, null], //row 3
+    [null, null, null, null, null, null, null], //row 4
+    [null, null, null, null, null, null, null], //row 5
+]
+
+
+
 function labelBlocks(x, y) {
-    let N = columns[y][x]
+    let N = board[x][y]
     return N
 }
 labelBlocks(0, 0)
@@ -26,7 +27,7 @@ labelBlocks(0, 0)
 //Loop through columns and label according to the array.
 
 //loop through columns and rows and replaces div content from columns array. 
-function columnLoop() {
+function boardLoop() {
 
     for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
         for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
@@ -40,74 +41,73 @@ function columnLoop() {
     }
 }
 
-columnLoop();
+boardLoop();
 
 //switches players
 function switchPlayer() {
     if (player === "R") {
         player = "B";
-} else {
-    player = "R";
-}
+    } else {
+        player = "R";
+    }
 }
 
 //changes the appropriate column value
 function changeColumn0Value(player) {
-    if(rowcount0 < 6) {
-        columns [0][row] = player;
+    if (rowcount0 < 6) {
+        board[row][0] = player;
         rowCount0 = rowCount0 + 1
-    }
-    else{
-        columnIsFullError()
-    }
-}
-function changeColumn1Value(player) {
-    if(rowcount1 < 6) {
-        columns [0][row] = player;
-        rowCount1 = rowCount1 + 1
-    }
-    else{
-        columnIsFullError()
-    }
-}
-function changeColumn2Value(player) {
-    if(rowcount2 < 6) {
-        columns [0][row] = player;
-        rowCount2 = rowCount2 + 1
-    }
-    else{
-        columnIsFullError()
-    }
-}
-function changeColumn3Value(player) {
-    if(rowcount3 < 6) {
-        columns [0][row] = player;
-        rowCount3 = rowCount3 + 1
-    }
-    else{
-        columnIsFullError()
-    }
-}
-function changeColumn4Value(player) {
-    if(rowcount4 < 6) {
-        columns [0][row] = player;
-        rowCount4 = rowCount4 + 1
-    }
-    else{
-        columnIsFullError()
-    }
-}
-function changeColumn5Value(player) {
-    if(rowcount5 < 6) {
-        columns [0][row] = player;
-        rowCount5 = rowCount5 + 1
-    }
-    else{
+    } else {
         columnIsFullError()
     }
 }
 
-function columnIsFullError()  {
+function changeColumn1Value(player) {
+    if (rowcount1 < 6) {
+        board[row][1] = player;
+        rowCount1 = rowCount1 + 1
+    } else {
+        columnIsFullError()
+    }
+}
+
+function changeColumn2Value(player) {
+    if (rowcount2 < 6) {
+        board[row][2] = player;
+        rowCount2 = rowCount2 + 1
+    } else {
+        columnIsFullError()
+    }
+}
+
+function changeColumn3Value(player) {
+    if (rowcount3 < 6) {
+        board[row][3] = player;
+        rowCount3 = rowCount3 + 1
+    } else {
+        columnIsFullError()
+    }
+}
+
+function changeColumn4Value(player) {
+    if (rowcount4 < 6) {
+        board[row][4] = player;
+        rowCount4 = rowCount4 + 1
+    } else {
+        columnIsFullError()
+    }
+}
+
+function changeColumn5Value(player) {
+    if (rowcount5 < 6) {
+        board[row][5] = player;
+        rowCount5 = rowCount5 + 1
+    } else {
+        columnIsFullError()
+    }
+}
+
+function columnIsFullError() {
     alert("Invalid move: column is full.")
 }
 
@@ -185,3 +185,10 @@ col6Click.addEventListener('click', function selectColumn() {
 
 //Win output "red wins!" "black wins" "ties" "stalemate"
 //ocp;
+
+
+
+
+//check for win conditions
+//connect click handler with change column functions
+//function for changing null to R or B
