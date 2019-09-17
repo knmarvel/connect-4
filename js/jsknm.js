@@ -1,115 +1,29 @@
-let player = "R"
-let rowCount0 = 0;
-let rowCount1 = 0;
-let rowCount2 = 0;
-let rowCount3 = 0;
-let rowCount4 = 0;
-let rowCount5 = 0;
-
-const board = [
-    [null, null, null, null, null, null, null], //row 0: on click, the last null in the string changes to the appropriate rowor
-    [null, null, null, null, null, null, null], //row 1
-    [null, null, null, null, null, null, null], // row 2
-    [null, null, null, null, null, null, null], //row 3
-    [null, null, null, null, null, null, null], //row 4
-    [null, null, null, null, null, null, null], //row 5
-]
-
-
-
-function labelBlocks(x, y) {
-    let N = board[x][y]
-    return N
-}
-labelBlocks(0, 0)
-
-
 //Loop through columns and label according to the array.
 
 //loop through columns and rows and replaces div content from columns array. 
-function boardLoop() {
 
-    for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
-        for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
-            //select the div coordinates
-            let content = (labelBlocks(rowCounter, columnCounter))
-            let blockId = (rowCounter + "," + columnCounter)
-            let divToReplace = document.getElementById(blockId);
-            //find the block label
-            divToReplace.innerHTML += " " + content;
-        }
-    }
-}
 
-boardLoop();
 
 //switches players
-function switchPlayer() {
-    if (player === "R") {
-        player = "B";
-    } else {
-        player = "R";
-    }
-}
+
 
 //changes the appropriate column value
-function changeColumn0Value(player) {
-    if (rowcount0 < 6) {
-        board[row][0] = player;
-        rowCount0 = rowCount0 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function changeColumn1Value(player) {
-    if (rowcount1 < 6) {
-        board[row][1] = player;
-        rowCount1 = rowCount1 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function changeColumn2Value(player) {
-    if (rowcount2 < 6) {
-        board[row][2] = player;
-        rowCount2 = rowCount2 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function changeColumn3Value(player) {
-    if (rowcount3 < 6) {
-        board[row][3] = player;
-        rowCount3 = rowCount3 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function changeColumn4Value(player) {
-    if (rowcount4 < 6) {
-        board[row][4] = player;
-        rowCount4 = rowCount4 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function changeColumn5Value(player) {
-    if (rowcount5 < 6) {
-        board[row][5] = player;
-        rowCount5 = rowCount5 + 1
-    } else {
-        columnIsFullError()
-    }
-}
 
-function columnIsFullError() {
-    alert("Invalid move: column is full.")
-}
+
+
+
+
+
+
+
+
+
+
 
 //Make a click handler for each column "target or current target" CHECK
 //don't add more when column is full
@@ -120,37 +34,6 @@ function columnIsFullError() {
 
 
 
-
-let col0Click = document.querySelector("#col0")
-col0Click.addEventListener('click', function selectColumn() {
-    console.log(col0Click)
-})
-
-
-let col1Click = document.querySelector("#col1")
-col1Click.addEventListener('click', function selectColumn() {
-    console.log(col1Click)
-})
-let col2Click = document.querySelector("#col2")
-col2Click.addEventListener('click', function selectColumn() {
-    console.log(col2Click)
-})
-let col3Click = document.querySelector("#col3")
-col3Click.addEventListener('click', function selectColumn() {
-    console.log(col3Click)
-})
-let col4Click = document.querySelector("#col4")
-col4Click.addEventListener('click', function selectColumn() {
-    console.log(col4Click)
-})
-let col5Click = document.querySelector("#col5")
-col5Click.addEventListener('click', function selectColumn() {
-    console.log(col5Click)
-})
-let col6Click = document.querySelector("#col6")
-col6Click.addEventListener('click', function selectColumn() {
-    console.log(col6Click)
-})
 
 //Drop a game piece into bottom available row (and change array)
 
