@@ -136,7 +136,8 @@ function columnClickHandler(evt) {
             return
         }
 
-        board = addDiskToBoard(currentPlayer, board, clickedColumn) displayBoardInHTML(board) let condition = checkForEndingCondition(board)
+        board = addDiskToBoard(currentPlayer, board, clickedColumn); displayBoardInHTML(board);
+         let condition = checkForEndingCondition(board)
             // "red win", "black win", "tie", ""
         if (condition !== "") {
             showMessage(condition)
