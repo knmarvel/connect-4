@@ -86,3 +86,20 @@ function checkForHorizontalWin() {
             alert("Black Wins")}
 ;    }
 }
+
+function checkForVerticalWin() {
+    let verticalString = ""
+    for (let rowCounter = 0; rowCounter <= 6; rowCounter++) {
+        for (let verticalCounter = 0; verticalCounter <= 5; verticalCounter++) {
+            verticalString = verticalString.split(",").join("") + board[verticalCounter][rowCounter];
+        }
+
+        ;
+    }
+    if (verticalString.includes("RRRR")) {
+        declareConnect4(0, -1)
+    }
+    else if (verticalString.includes("BBBB")) {
+        declareConnect4(-1, 0)
+    }
+}

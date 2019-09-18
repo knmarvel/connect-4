@@ -77,7 +77,8 @@ function togglePlayer() {
               addDiscImage(blockId, player)
               board[rowCount0][0]=player;
               rowcount0 = rowCount0++;
-              checkForHorizontalWin()
+              checkForHorizontalWin();
+              checkForVerticalWin();
               checkForDiagonalWin();
               togglePlayer();
           } else{
@@ -95,7 +96,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount1][1]=player;
               rowcount1 = rowCount1++;
-              checkForHorizontalWin()
+              checkForHorizontalWin();
+              checkForVerticalWin();
               checkForDiagonalWin();
               togglePlayer();
           } else{
@@ -111,7 +113,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount2][2]=player;
               rowcount2= rowCount2++;
-              checkForHorizontalWin()
+              checkForHorizontalWin();
+              checkForVerticalWin();
               checkForDiagonalWin();
               togglePlayer();
           } else{
@@ -127,6 +130,7 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount3][3]=player;
               rowcount3= rowCount3++;
+              checkForVerticalWin();
               checkForDiagonalWin();
               checkForHorizontalWin()
               togglePlayer();
@@ -142,6 +146,7 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount4][4]=player;
               rowcount4= rowCount4++;
+              checkForVerticalWin();
               checkForHorizontalWin()
               checkForDiagonalWin();
               togglePlayer();
@@ -158,7 +163,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount5][5] = player;
               rowcount5 = rowCount5++;
-              checkForHorizontalWin()
+              checkForHorizontalWin();
+              checkForVerticalWin();
               checkForDiagonalWin();
               togglePlayer();
           } else{
@@ -173,7 +179,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount6][6] = player;
               rowcount6 = rowCount6++;
-              checkForHorizontalWin()
+              checkForHorizontalWin();
+              checkForVerticalWin();
               checkForDiagonalWin();
               togglePlayer();
           } else{
