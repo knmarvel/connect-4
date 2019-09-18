@@ -60,12 +60,29 @@ function togglePlayer() {
     let newColor = player
     if (player === "R") {
         player = "B";
+        let turn = "Player 2's turn"
     } else {
         player = "R";
+        let turn = "Player 1's turn"
     }
-    return newColor
+    return newColor;
+
 }
 
+function changePlayerState()    {
+    let turn = "Player 1's turn"
+    if (player === "R") {
+        turn = "Player 1's turn"
+    } else {
+        turn = "Player 2's turn"
+    }
+
+let newDiv = document.createElement("div");
+let newContent = document.createTextNode(turn);
+newDiv.appendChild(newContent);
+let currentDiv = document.getElementById("whichPlayer");
+
+}
 
 
     // figure out what column was clicked
@@ -188,7 +205,7 @@ function togglePlayer() {
           }
     })
 
-  
+
 
     //    board = addDiskToBoard(player, board, clickedColumn); displayBoardInHTML(board);
     //     let condition = checkForEndingCondition(board)
