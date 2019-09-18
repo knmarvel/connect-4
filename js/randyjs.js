@@ -21,11 +21,7 @@ function addDiscImage(blockId, player) {
 }
 
 
-    function addDiskToBoard(player, boardToUpdate, selectedColumn) {
-        
-        return board
 
-    }
 
 function columnIsFullError() {
     alert("Invalid move: column is full.")
