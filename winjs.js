@@ -1,23 +1,23 @@
 const board6 = [
     ["R", "10", "20", "30", "40", "50", "60"], //row 0: on click, the last "N" in the string changes to the appropriate rowor
     ["01", "R", "21", "31", "41", "51", "61"], //row 1
-    ["02", "12", "R", "R", "42", "52", "62"], // row 2
-    ["03", "13", "R", "R", "43", "53", "63"], //row 3
-    ["04", "R", "24", "34", "44", "54", "64"], //row 4
-    ["R", "15", "25", "35", "45", "55", "65"], //row 5
+    ["R", "12", "R", "R", "42", "52", "62"], // row 2
+    ["03", "R", "R", "R", "43", "53", "63"], //row 3
+    ["04", "R", "R", "34", "44", "54", "64"], //row 4
+    ["R", "15", "25", "R", "45", "55", "65"], //row 5
 ]
 
-checkForDiagonalWin();
 
 function checkForDiagonalWin()  {
     let positiveSlopes = getPositiveSlopes();
     let winConditionR = positiveSlopes.search("RRRR");
     let winConditionB = positiveSlopes.search("BBBB");
     let negativeSlopes = getNegativeSlopes();
-    if (winConditionR === ""){
+    if (winConditionR === -1){
     winConditionR = negativeSlopes.search("RRRR");}
-    if (winConditionB === "")   {
+    if (winConditionB === -1)   {
     winConditionB = negativeSlopes.search("BBBB");}
+    console.log(winConditionR,winConditionB);
     console.log(declareConnect4(winConditionR, winConditionB))
 }
 
@@ -44,9 +44,11 @@ function getNegativeSlopes()    {
                 let downY = verticalCounter-slope;
             slopeNegativeString = slopeNegativeString + board[downY][downX];
         } slopeNegativeString = slopeNegativeString + " ";
-    }
         
-    }return slopeNegativeString;
+    }
+    
+    }console.log(slopeNegativeString) 
+    return slopeNegativeString;
 }
 
 function declareConnect4(winConditionR, winConditionB)  {
