@@ -56,15 +56,10 @@ function declareConnect4(winConditionR, winConditionB)  {
     let redConnect = "Player 1 Has Connect 4!"
     let blackConnect = "Player 2 Has Connect 4"
     if(winConditionR !=-1)   {
-        if (connect4Alert === "") {
         connect4Alert = redConnect;
-        }
-        else {connect4Alert = "Tie!" +" "+ redconnect +", " + blackConnect}
     }
     if(winConditionB !=-1)  {
-        if(connect4Alert === "")    {
         connect4Alert = connect4Alert + blackConnect;}
-        else {connect4Alert = "Tie!" + redConnect + ", " + blackConnect}
     }
     if (connect4Alert != "")    {
     alert(connect4Alert);
@@ -80,10 +75,10 @@ function checkForHorizontalWin() {
             rowString = rowString.split(",").join("") + board[rowCounter][columnCounter];
         }
         if (rowString.includes("RRRR")){
-            alert("Red Wins")
+            declareConnect4(0, -1)
         }
         else if(rowString.includes("BBBB")){
-            alert("Black Wins")}
+            declareConnect4(-1, 0)}
 ;    }
 }
 
