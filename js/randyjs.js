@@ -14,10 +14,9 @@ let rowCount3 = 0;
 let rowCount4 = 0;
 let rowCount5 = 0;
 
-console.log(board[2][2]),
 
-    function addDiskToBoard(color, boardToUpdate, selectedColumn) {
-
+    function addDiskToBoard(player, boardToUpdate, selectedColumn) {
+        
         return updatedBoard
 
     }
@@ -43,6 +42,11 @@ displayBoardInHTML(board);
 
     // nothing to return
 
+    function labelBlocks(x, y) {
+        let N = board[x][y]
+        return N
+    }
+    
 
 
 
@@ -76,8 +80,9 @@ function columnClickHandler(evt) {
                 rowCount0 = rowCount0 + 1
             } else {
                 columnIsFullError()
-            }})
-    
+            } console.log(board);
+        })
+
         let col1Click = document.querySelector("#col1")
         col1Click.addEventListener('click', function changeColumn1Value(player) {
             if (rowcount1 < 6) {
