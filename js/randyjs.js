@@ -77,8 +77,8 @@ function togglePlayer() {
               addDiscImage(blockId, player)
               board[rowCount0][0]=player;
               rowcount0 = rowCount0++;
-              console.table(board);
-              
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
@@ -95,6 +95,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount1][1]=player;
               rowcount1 = rowCount1++;
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
@@ -109,6 +111,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount2][2]=player;
               rowcount2= rowCount2++;
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
@@ -123,6 +127,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount3][3]=player;
               rowcount3= rowCount3++;
+              checkForDiagonalWin();
+              checkForHorizontalWin()
               togglePlayer();
           } else{
               columnIsFullError()
@@ -136,6 +142,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount4][4]=player;
               rowcount4= rowCount4++;
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
@@ -145,11 +153,13 @@ function togglePlayer() {
     let col5Click = document.querySelector("#col5")
     col5Click.addEventListener('click', function selectColumn5() {
           console.log(col5Click)
-          let blockId = (rowCount5 + "," + 5)
-              addDiscImage(blockId, player)
           if(rowCount5 <6)  {
-              board[rowCount5][5]=player;
+            let blockId = (rowCount5 + "," + 5)
+            addDiscImage(blockId, player)
+              board[rowCount5][5] = player;
               rowcount5 = rowCount5++;
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
@@ -163,6 +173,8 @@ function togglePlayer() {
             addDiscImage(blockId, player)
               board[rowCount6][6] = player;
               rowcount6 = rowCount6++;
+              checkForHorizontalWin()
+              checkForDiagonalWin();
               togglePlayer();
           } else{
               columnIsFullError()
