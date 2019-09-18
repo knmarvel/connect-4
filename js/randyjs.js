@@ -6,7 +6,7 @@ const board = [
     ["N", "N", "N", "N", "N", "N", "N"], //row 4
     ["N", "N", "N", "N", "N", "N", "N"], //row 5
 ]
-console.table(board);
+
 let player = "R"
 let rowCount0 = 0;
 let rowCount1 = 0;
