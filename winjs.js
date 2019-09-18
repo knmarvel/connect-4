@@ -60,12 +60,11 @@ function declareConnect4(winConditionR, winConditionB)  {
     }
     if(winConditionB !=-1)  {
         connect4Alert = connect4Alert + blackConnect;}
-    }
+    
     if (connect4Alert != "")    {
     alert(connect4Alert);
     }
 }
-
 
 function checkForHorizontalWin() {
 
