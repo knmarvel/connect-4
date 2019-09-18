@@ -65,10 +65,11 @@ function togglePlayer() {
         player = "R";
         let turn = "Player 1's turn"
     }
+    changePlayerState();
     return newColor;
 
 }
-
+document.body.onload = changePlayerState();
 function changePlayerState()    {
     let turn = "Player 1's turn"
     if (player === "R") {
@@ -77,11 +78,7 @@ function changePlayerState()    {
         turn = "Player 2's turn"
     }
 
-let newDiv = document.createElement("div");
-let newContent = document.createTextNode(turn);
-newDiv.appendChild(newContent);
-let currentDiv = document.getElementById("whichPlayer");
-
+    document.getElementById("whichPlayer").innerHTML = turn;
 }
 
 
@@ -216,3 +213,5 @@ let currentDiv = document.getElementById("whichPlayer");
     //        currentPlayer = togglePlayer(currentPlayer)
     //    }
     
+    //Group Connect-4-I SE July 2019 Kenzie Academy.
+    //Coded by Chris McAfee, Detrich Schilling, Karen Marvel, and LeighAnn Featheringill.

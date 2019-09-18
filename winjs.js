@@ -97,3 +97,4 @@ function checkForVerticalWin() {
         declareConnect4(-1, 0)
     }
 }
+
