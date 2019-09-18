@@ -16,6 +16,10 @@ let rowCount4 = 0;
 let rowCount5 = 0;
 let rowCount6 = 0;
 
+function addDiscImage(blockId, player) {
+    document.getElementById(blockId).classList.add(player);
+}
+
 
     function addDiskToBoard(player, boardToUpdate, selectedColumn) {
         
@@ -188,9 +192,7 @@ function togglePlayer() {
           }
     })
 
-    function addDiscImage(blockId, player) {
-        document.getElementById(blockId).classList.add(player);
-    }
+  
 
     //    board = addDiskToBoard(player, board, clickedColumn); displayBoardInHTML(board);
     //     let condition = checkForEndingCondition(board)
