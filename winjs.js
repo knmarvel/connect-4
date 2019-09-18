@@ -53,16 +53,17 @@ function getNegativeSlopes()    {
 
 function declareConnect4(winConditionR, winConditionB)  {
     let connect4Alert = "";
-    let redConnect = "Player 1 Has Connect 4!"
-    let blackConnect = "Player 2 Has Connect 4"
+    let redConnect = "Player 1 Has Connect 4! Game Over! Play Again?"
+    let blackConnect = "Player 2 Has Connect 4! Game Over! Play Again?"
     if(winConditionR !=-1)   {
         connect4Alert = redConnect;
     }
     if(winConditionB !=-1)  {
         connect4Alert = connect4Alert + blackConnect;}
-    
+
     if (connect4Alert != "")    {
     alert(connect4Alert);
+    window.location.reload();
     }
 }
 
