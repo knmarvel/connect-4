@@ -1,18 +1,45 @@
-//Loop through columns and label according to the array.
 
-//loop through columns and rows and replaces div content from columns array. 
+function checkForEndingCondition(board) {
+   
+    
+   
+   
+    // ending conditions: "red win", "black win", "tie", "" (keep playing)
+    return condition
+}
+
+function showMessage() {
+    // Tell the user if someone has won or there is a tie
+}
 
 
 
-//switches players
-
-
-//changes the appropriate column value
 
 
 
 
 
+
+function checkForHorizontalWin()   {
+let checkHorizontalWin = (checkboard)=> {
+    if(checkBoard.includes("BBBB")||checkboard.includes("RRRR")) {
+        return checkboard;
+    } 
+}
+return board.filter(checkHorizontalWin)
+}
+
+
+
+
+
+
+
+
+
+function addDiscImage(blockId, player) {
+    document.getElementById(blockId).classList.add(player);
+}
 
 
 
