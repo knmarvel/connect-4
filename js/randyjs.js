@@ -188,6 +188,9 @@ function togglePlayer() {
           }
     })
 
+    function addDiscImage(blockId, player) {
+        document.getElementById(blockId).classList.add(player);
+    }
 
     //    board = addDiskToBoard(player, board, clickedColumn); displayBoardInHTML(board);
     //     let condition = checkForEndingCondition(board)
