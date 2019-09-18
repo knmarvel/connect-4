@@ -18,6 +18,7 @@
     width: 70px;
     height: 370px;
     background: var(--color2);
+    color: transparent;
 }
 .block {
     display: flex;
