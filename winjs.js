@@ -59,9 +59,9 @@ function declareConnect4(winConditionR, winConditionB)  {
         connect4Alert = redConnect;
     }
     if(winConditionB !=-1)  {
-        connect4Alert = connect4Alert + blackConnect;}
-
+        connect4Alert = connect4Alert + blackConnect;}  
     if (connect4Alert != "")    {
+    
     alert(connect4Alert);
     window.location.reload();
     }

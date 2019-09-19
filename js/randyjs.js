@@ -7,6 +7,7 @@ const board = [
     ["N", "N", "N", "N", "N", "N", "N"], //row 5
 ]
 
+console.table(board);
 let player = "R"
 let rowCount0 = 0;
 let rowCount1 = 0;
@@ -16,19 +17,27 @@ let rowCount4 = 0;
 let rowCount5 = 0;
 let rowCount6 = 0;
 
+//check to see if there are any "N"'s left in board[]
+function checkForTie () {
+if (board[0].includes("N")|| board[1].includes("N") || board[2].includes("N") 
+    || board[3].includes("N") || board[4].includes("N") || board[5].includes("N")) {
+    checkForHorizontalWin();
+    checkForVerticalWin();
+    checkForDiagonalWin();
+    togglePlayer();
+  }
+  else {
+      alert ("Tie Game.  Try Again?")
+      window.location.reload()
+  }
+}
 function addDiscImage(blockId, player) {
     document.getElementById(blockId).classList.add(player);
 }
-
-
-
-
 function columnIsFullError() {
     alert("Invalid move: column is full.")
 }
-
 // function displayBoardInHTML(boardToDisplay) {
-
 //     for (let columnCounter = 0; columnCounter <= 6; columnCounter++) {
 //         for (let rowCounter = 0; rowCounter <= 5; rowCounter++) {
 //             //select the div coordinates
@@ -39,23 +48,17 @@ function columnIsFullError() {
 //     }
 // }
 // displayBoardInHTML(board);
-
     // nothing to return
-
     function findBlockLabel(x, y) {
         let N = board[x][y]
         return N
     }
-
     function replaceBlockContentsByCoordinates(x,y,content) {
         let blockId = (x + "," + y)
         let divToReplace = document.getElementById(blockId);
         divToReplace.innerHTML = "";
         divToReplace.innerHTML = blockId + " " + content;
     }
-
-
-
 function togglePlayer() {
     let newColor = player
     if (player === "R") {
@@ -67,9 +70,7 @@ function togglePlayer() {
     }
     changePlayerState();
     return newColor;
-
 }
-document.body.onload = changePlayerState();
 function changePlayerState()    {
     let turn = "Player 1's turn"
     if (player === "R") {
@@ -77,10 +78,9 @@ function changePlayerState()    {
     } else {
         turn = "Player 2's turn"
     }
-
-    document.getElementById("whichPlayer").innerHTML = turn;
+ document.getElementById("whichPlayer").innerHTML = turn;
 }
-
+window.onload = changePlayerState();
 
     // figure out what column was clicked
     let col0Click = document.querySelector("#col0")
@@ -91,17 +91,15 @@ function changePlayerState()    {
               addDiscImage(blockId, player)
               board[rowCount0][0]=player;
               rowcount0 = rowCount0++;
-              checkForHorizontalWin();
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie ()
+            //   checkForHorizontalWin();
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
     })
-
-
-
     let col1Click = document.querySelector("#col1")
     col1Click.addEventListener('click', function selectColumn1() {
           console.log(col1Click)
@@ -110,10 +108,11 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount1][1]=player;
               rowcount1 = rowCount1++;
-              checkForHorizontalWin();
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie ()
+            //   checkForHorizontalWin();
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
@@ -127,15 +126,15 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount2][2]=player;
               rowcount2= rowCount2++;
-              checkForHorizontalWin();
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie()
+            //   checkForHorizontalWin();
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
     })
-
     let col3Click = document.querySelector("#col3")
     col3Click.addEventListener('click', function selectColumn3() {
           console.log(col3Click)
@@ -144,10 +143,11 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount3][3]=player;
               rowcount3= rowCount3++;
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              checkForHorizontalWin()
-              togglePlayer();
+              checkForTie()
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   checkForHorizontalWin()
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
@@ -160,15 +160,15 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount4][4]=player;
               rowcount4= rowCount4++;
-              checkForVerticalWin();
-              checkForHorizontalWin()
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie()
+            //   checkForVerticalWin();
+            //   checkForHorizontalWin()
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
     })
-
     let col5Click = document.querySelector("#col5")
     col5Click.addEventListener('click', function selectColumn5() {
           console.log(col5Click)
@@ -177,10 +177,11 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount5][5] = player;
               rowcount5 = rowCount5++;
-              checkForHorizontalWin();
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie()
+            //   checkForHorizontalWin();
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
@@ -193,17 +194,15 @@ function changePlayerState()    {
             addDiscImage(blockId, player)
               board[rowCount6][6] = player;
               rowcount6 = rowCount6++;
-              checkForHorizontalWin();
-              checkForVerticalWin();
-              checkForDiagonalWin();
-              togglePlayer();
+              checkForTie()
+            //   checkForHorizontalWin();
+            //   checkForVerticalWin();
+            //   checkForDiagonalWin();
+            //   togglePlayer();
           } else{
               columnIsFullError()
           }
     })
-
-
-
     //    board = addDiskToBoard(player, board, clickedColumn); displayBoardInHTML(board);
     //     let condition = checkForEndingCondition(board)
     //        // "red win", "black win", "tie", ""
@@ -212,6 +211,3 @@ function changePlayerState()    {
     //    } else {
     //        currentPlayer = togglePlayer(currentPlayer)
     //    }
-    
-    //Group Connect-4-I SE July 2019 Kenzie Academy.
-    //Coded by Chris McAfee, Detrich Schilling, Karen Marvel, and LeighAnn Featheringill.
